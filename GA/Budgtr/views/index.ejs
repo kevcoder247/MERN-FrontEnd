@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    
+    <div class="container">
+      
+        
+            <h1>Budgtr</h1>
+        
+        <nav>
+           <button> <a href="/budgets/new">Create New Entry</a></button>
+        </nav>
+
+        <div class="row table">
+            <ul>
+            <% for(let i = 0; i < budget.length; i++){ %>
+            <table >
+                <tr >
+                    <!-- date -->
+                    <td><%= budget[i].date %></td>
+                    <!-- name -->
+                    <td><a href="/budgets/<%=i%>"><%= budget[i].name %></a></td>
+                    <!-- amount -->
+                    <td><%= budget[i].amount %></td>
+                </tr>
+            </table>
+               <% } %>
+        </div>
+        </ul>
+    </div>
+        <!-- end of table  -->
+   
+</body>
+</html>

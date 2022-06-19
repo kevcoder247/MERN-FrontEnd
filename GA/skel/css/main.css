@@ -1,0 +1,33 @@
+body{
+    border: 3px solid red;
+    margin: auto;
+    background-color: beige;
+}
+h1{
+    text-align: center;
+}
+.container{
+    border: 3px solid blue;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.card{
+    border: 5px solid green;
+    margin: 5px 5px;
+    width: 535px;
+    height: 350px;
+}
+img{
+    width: 200px;
+}
+.charizard img{
+    width: 311px;
+}
+.cardText{
+    border: 2px solid rgb(48, 139, 196);
+    width: 300px;
+    margin: auto;
+}

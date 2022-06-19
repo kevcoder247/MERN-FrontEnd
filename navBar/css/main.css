@@ -1,0 +1,114 @@
+:root{
+    --primary: #341948;
+    --light: #9388A2;
+    --dark: #170B3B;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+   /* Add Font familiy later  */
+}
+
+.container{
+    max-width: 1280px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--dark);
+    padding: 16px 32px;
+    
+}
+nav{
+  position: fixed; 
+  top: 0;
+  left:0;
+  right:0;
+  /* makes sure the nave stays above everything else */
+  z-index: 99; 
+}
+h1{
+    color: var(--light);
+    font: 1.5rem;
+    letter-spacing: .1rem;
+}
+.hamburger{
+display: block;
+position: relative;
+z-index: 1;
+
+user-select: none;
+
+appearance: none;
+border: none;
+outline: none;
+background: none;
+cursor: pointer;
+}
+.hamburger span{
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background-color: var(--light);
+    border-radius: 5px;
+    z-index: 1;
+    /* controls the origin from where the hamburger will rotate */
+    transform-origin: 0 0;
+    transition: 0.6s;
+}
+/* grabs the second element(spans) */
+.hamburger:hover span:nth-child(2){
+    transform: translateX(8px);
+    background-color: var(--primary)
+}
+
+
+/* =============Hamburger rotating animations ===========*/
+
+/* grabs first span element(span) */
+.hamburger.is-active span:nth-child(1){
+   transform: translate(0px, -2px)rotate(45deg);
+}
+
+/* grabs middlespan element(span) */
+.hamburger.is-active span:nth-child(2){
+    opacity: 0;
+    transform: translate(15px);
+ }
+
+/* grabs last element  (span)*/
+.hamburger.is-active span:nth-child(3){
+    transform: translate(-3px, -3px)rotate(-45deg);
+}
+
+/* controls when mouse hovers over hamburger */
+.hamburger.is-active:hover span{
+    background-color: var(--primary);
+}
+.menu{
+    display: none;
+    justify-content: flex-end;
+    margin: 0 -10px
+}
+.menu a{
+    color: white;
+    margin: 0 16px;
+    text-decoration: none;
+}
+
+/* .menu a.is-active{
+    background-color: aqua;
+} */
+
+/* above 768px hambuger disappears and menu elements appear */
+@media(min-width: 768px){
+    .hamburger{
+        display: none;
+    }
+    .menu{
+        display: flex;
+    }
+}
